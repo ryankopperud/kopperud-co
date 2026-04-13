@@ -1,0 +1,27 @@
+[build]
+  base = "site"
+  command = "npm run build"
+  publish = "site/dist"
+
+[[redirects]]
+  from = "/ryan-kopperud"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/podcasting/*"
+  to = "/podcasting"
+  status = 301
+
+[[redirects]]
+  from = "/writing/the-biggest-ticket-in-town-ryan-kopperud"
+  to = "/writing/the-biggest-ticket-in-town"
+  status = 301
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
