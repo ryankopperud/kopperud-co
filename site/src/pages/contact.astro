@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact | Kopperud & Co." description="Get in touch. Whether you need marketing strategy, want to collaborate, or just want to say hello — Ryan Kopperud responds within 24 hours.">
+
+  <!-- Hero -->
+  <section class="section-padding">
+    <div class="container-wide">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <!-- Left: Info -->
+        <div>
+          <span class="accent-bar mb-6"></span>
+          <h1 class="text-5xl sm:text-6xl md:text-7xl mb-8">Get in touch</h1>
+          <p class="text-xl text-[var(--color-ink-light)] leading-relaxed mb-8">
+            Question? Idea? Want to work together? I'd love to hear from you. My digital door is always open, and I respond within 24 hours.
+          </p>
+
+          <div class="space-y-6 mb-10">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-brand-gold)] mb-1">Email</p>
+              <a href="mailto:ryan@kopperud.co" class="text-lg text-[var(--color-ink)] hover:text-[var(--color-brand-gold)] transition-colors no-underline">ryan@kopperud.co</a>
+            </div>
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-brand-gold)] mb-1">Phone</p>
+              <a href="tel:6128023822" class="text-lg text-[var(--color-ink)] hover:text-[var(--color-brand-gold)] transition-colors no-underline">612-802-3822</a>
+            </div>
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-brand-gold)] mb-1">Location</p>
+              <p class="text-lg text-[var(--color-ink)]">Minneapolis, Minnesota</p>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-ink-muted)] mb-3">Connect</p>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://www.linkedin.com/in/ryankopperud/" target="_blank" rel="noopener noreferrer" class="text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-brand-gold)] transition-colors no-underline">LinkedIn</a>
+              <a href="https://www.instagram.com/ryankopperud/" target="_blank" rel="noopener noreferrer" class="text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-brand-gold)] transition-colors no-underline">Instagram</a>
+              <a href="https://x.com/ryankopperud" target="_blank" rel="noopener noreferrer" class="text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-brand-gold)] transition-colors no-underline">Twitter/X</a>
+              <a href="https://www.facebook.com/ryankopperud/" target="_blank" rel="noopener noreferrer" class="text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-brand-gold)] transition-colors no-underline">Facebook</a>
+              <a href="https://open.spotify.com/artist/02WrQ3bFUrPs8GLBRt2ATl" target="_blank" rel="noopener noreferrer" class="text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-brand-gold)] transition-colors no-underline">Spotify</a>
+              <a href="https://www.youtube.com/@ryankopperud" target="_blank" rel="noopener noreferrer" class="text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-brand-gold)] transition-colors no-underline">YouTube</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div>
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="space-y-6"
+          >
+            <!-- Honeypot -->
+            <p class="hidden">
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </p>
+            <input type="hidden" name="form-name" value="contact" />
+
+            <!-- Inquiry Type -->
+            <div>
+              <label for="inquiry" class="block text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-ink-muted)] mb-2">What's this about?</label>
+              <select
+                id="inquiry"
+                name="inquiry"
+                required
+                class="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-ink)] focus:outline-none focus:border-[var(--color-brand-yellow)] transition-colors text-sm appearance-none"
+              >
+                <option value="">Select one...</option>
+                <option value="marketing">Marketing & Strategy</option>
+                <option value="speaking">Speaking & Events</option>
+                <option value="press">Press & Media</option>
+                <option value="music">Music & Collaboration</option>
+                <option value="general">General / Say Hello</option>
+              </select>
+            </div>
+
+            <!-- Name -->
+            <div>
+              <label for="name" class="block text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-ink-muted)] mb-2">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-ink)] placeholder:text-[var(--color-ink-muted)]/50 focus:outline-none focus:border-[var(--color-brand-yellow)] transition-colors text-sm"
+                placeholder="Your name"
+              />
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="email" class="block text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-ink-muted)] mb-2">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-ink)] placeholder:text-[var(--color-ink-muted)]/50 focus:outline-none focus:border-[var(--color-brand-yellow)] transition-colors text-sm"
+                placeholder="your@email.com"
+              />
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label for="message" class="block text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-ink-muted)] mb-2">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                class="w-full px-4 py-3 bg-white border border-[var(--color-border)] text-[var(--color-ink)] placeholder:text-[var(--color-ink-muted)]/50 focus:outline-none focus:border-[var(--color-brand-yellow)] transition-colors text-sm resize-y"
+                placeholder="Tell me what you're thinking..."
+              ></textarea>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn-primary w-full justify-center">
+              Send message
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

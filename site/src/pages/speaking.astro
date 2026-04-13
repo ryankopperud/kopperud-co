@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const topics = [
+  {
+    title: 'Everything\'s a Story: Brand Strategy Through Creative Storytelling',
+    description: 'How creative instincts — from spoken word to hip-hop — translate directly into building memorable brands. The intersection of art and commerce.'
+  },
+  {
+    title: 'The Marketer\'s Arc: From Slam Poetry to SaaS',
+    description: 'My unconventional path from the Minneapolis Poetry Slam Team to leading marketing for Fortune 500 clients — and what that journey teaches about creativity in business.'
+  },
+  {
+    title: 'Category Creation & Brand Positioning for Startups',
+    description: 'How early-stage companies can define their category, craft messaging that resonates, and build a brand that stands for something — before they have the budget to outspend competitors.'
+  },
+  {
+    title: 'Building & Leading Creative Marketing Teams',
+    description: 'Lessons from a decade of Director and VP-level leadership on hiring, culture, creative direction, and getting the best work from your team.'
+  },
+  {
+    title: 'The Future of Hemp & THC Beverages',
+    description: 'Insights from leading growth at Wild State Cider and advocating for hemp industry policy at the federal level.'
+  }
+];
+---
+
+<BaseLayout title="Speaking & Events | Ryan Kopperud" description="Keynotes, panels, and podcasts on brand strategy, creative storytelling, marketing leadership, and the intersection of art and commerce.">
+
+  <!-- Hero -->
+  <section class="section-padding">
+    <div class="container-wide">
+      <div class="max-w-3xl">
+        <span class="accent-bar mb-6"></span>
+        <h1 class="text-5xl sm:text-6xl md:text-7xl mb-8">Speaking<br />& Events</h1>
+        <p class="text-xl text-[var(--color-ink-light)] leading-relaxed">
+          I've been on stages my whole life — from poetry slams at 19 to keynotes and panels today. I speak on brand strategy, creative storytelling, marketing leadership, and the unexpected places where art and business intersect.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Topics -->
+  <section class="section-dark section-padding">
+    <div class="container-wide">
+      <span class="accent-bar mb-6"></span>
+      <h2 class="text-3xl sm:text-4xl mb-12">Topics I speak on</h2>
+      <div class="space-y-8">
+        {topics.map(topic => (
+          <div class="border-l-2 border-[var(--color-brand-yellow)] pl-6 max-w-2xl">
+            <h3 class="font-display text-xl mb-2 text-[var(--color-surface)]">{topic.title}</h3>
+            <p class="text-[var(--color-surface)]/60 text-sm leading-relaxed">{topic.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Notable Appearances -->
+  <section class="section-padding">
+    <div class="container-wide">
+      <span class="accent-bar mb-6"></span>
+      <h2 class="text-3xl sm:text-4xl mb-12">Notable appearances</h2>
+      <div class="space-y-6 max-w-2xl">
+        <div class="flex items-start gap-4 pb-6 border-b border-[var(--color-border)]">
+          <p class="text-sm text-[var(--color-ink-muted)] whitespace-nowrap min-w-[5rem]">Dec 2025</p>
+          <div>
+            <h3 class="font-display text-lg mb-1">Press Conference with U.S. Senator Amy Klobuchar</h3>
+            <p class="text-sm text-[var(--color-ink-muted)]">Federal hemp regulation advocacy at Wild State Cider, Duluth, MN. Covered by Star Tribune, Fox 21, Northern News Now, and WTIP.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 pb-6 border-b border-[var(--color-border)]">
+          <p class="text-sm text-[var(--color-ink-muted)] whitespace-nowrap min-w-[5rem]">Ongoing</p>
+          <div>
+            <h3 class="font-display text-lg mb-1">The SaaS Brand Strategy Show</h3>
+            <p class="text-sm text-[var(--color-ink-muted)]">Co-host. Business growth, marketing strategy, and category creation for B2B/B2C leaders.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 pb-6 border-b border-[var(--color-border)]">
+          <p class="text-sm text-[var(--color-ink-muted)] whitespace-nowrap min-w-[5rem]">Ongoing</p>
+          <div>
+            <h3 class="font-display text-lg mb-1">The What If? Podcast</h3>
+            <p class="text-sm text-[var(--color-ink-muted)]">Co-host. Comedy podcast with live performances across Minnesota and California.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking CTA -->
+  <section class="section-dark section-padding-sm">
+    <div class="container-narrow text-center">
+      <h2 class="text-3xl sm:text-4xl mb-6">Book me to speak</h2>
+      <p class="text-[var(--color-surface)]/60 mb-8 max-w-lg mx-auto">
+        Available for keynotes, panels, podcast guest appearances, and workshops. Let's talk about what would work best for your event.
+      </p>
+      <a href="/contact" class="btn-primary">
+        Get in touch
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

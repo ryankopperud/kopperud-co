@@ -1,0 +1,209 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Newsletter from '../components/Newsletter.astro';
+---
+
+<BaseLayout title="Ryan Kopperud | Kopperud & Co." description="Marketer. Podcaster. Musician. Writer. Nearly 20 years of creative strategy across 20+ brands. Everything's a story. Tell a better one.">
+
+  <!-- ============ HERO ============ -->
+  <section class="section-padding relative overflow-hidden">
+    <div class="container-wide">
+      <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+        <div class="max-w-2xl flex-1">
+          <p class="text-sm font-medium uppercase tracking-[0.2em] text-[var(--color-ink-muted)] mb-6">
+            Marketer. Podcaster. Musician. Writer.
+          </p>
+          <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal mb-8 leading-[0.95]">
+            Everything's a story.<br />
+            <span class="text-gradient">Tell a better one.</span>
+          </h1>
+          <p class="text-lg md:text-xl text-[var(--color-ink-light)] max-w-2xl mb-10 leading-relaxed">
+            I'm Ryan Kopperud — a creative strategist with nearly 20 years building brands, making music, hosting podcasts, and writing. Based in Minneapolis. Fueled by story.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="/contact" class="btn-primary">
+              Get in touch
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="/about" class="btn-outline">My story</a>
+          </div>
+        </div>
+        <div class="w-64 md:w-80 lg:w-96 shrink-0">
+          <img src="/images/ryan-bio-square.webp" alt="Ryan Kopperud" loading="eager" fetchpriority="high" class="w-full aspect-square object-cover rounded-sm shadow-2xl" />
+        </div>
+      </div>
+    </div>
+    <!-- Decorative element -->
+    <div class="absolute top-1/2 -right-32 w-96 h-96 bg-[var(--color-brand-yellow)]/10 rounded-full blur-3xl -translate-y-1/2 pointer-events-none"></div>
+  </section>
+
+  <!-- ============ NARRATIVE ARC ============ -->
+  <section class="section-dark section-padding relative overflow-hidden">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="none"
+      class="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none"
+    >
+      <source src="/videos/hero-video-2.mp4" type="video/mp4" />
+    </video>
+    <div class="container-wide relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="accent-bar mx-auto mb-8"></span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl mb-8">The short version</h2>
+        <p class="text-lg text-[var(--color-surface)]/70 leading-relaxed mb-6">
+          I started as a 19-year-old slam poet on the Minneapolis Poetry Slam Team, competing nationally. That led to making hip-hop music, performing at First Avenue, and releasing albums with hundreds of thousands of streams.
+        </p>
+        <p class="text-lg text-[var(--color-surface)]/70 leading-relaxed mb-6">
+          Somewhere along the way, I realized that the thing I loved most — <em>telling stories</em> — was also the thing that made great marketing. So I brought that instinct into B2B and B2C tech, spending a decade leading marketing at the Director and VP level for startups through Fortune 500 companies.
+        </p>
+        <p class="text-lg text-[var(--color-surface)]/70 leading-relaxed mb-10">
+          Now I run my own consulting practice, lead growth at Wild State Cider, sit on the board of COMPAS (a Minnesota arts nonprofit), host podcasts with millions of downloads, and keep making music. It all comes back to the same thing: <strong class="text-[var(--color-brand-yellow)]">story</strong>.
+        </p>
+        <a href="/about" class="btn-primary">Read the full story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS BAR ============ -->
+  <section class="py-16 bg-[var(--color-surface-warm)] border-y border-[var(--color-border)]">
+    <div class="container-wide">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="stat-number">20+</p>
+          <p class="text-sm text-[var(--color-ink-muted)] mt-2 font-medium">Years of Experience</p>
+        </div>
+        <div>
+          <p class="stat-number">500+</p>
+          <p class="text-sm text-[var(--color-ink-muted)] mt-2 font-medium">Podcast Episodes</p>
+        </div>
+        <div>
+          <p class="stat-number">50+</p>
+          <p class="text-sm text-[var(--color-ink-muted)] mt-2 font-medium">Songs Released</p>
+        </div>
+        <div>
+          <p class="stat-number">20+</p>
+          <p class="text-sm text-[var(--color-ink-muted)] mt-2 font-medium">Brands Served</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED WORK ============ -->
+  <section class="section-padding">
+    <div class="container-wide">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-16">
+        <div>
+          <span class="accent-bar mb-6"></span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl">What I do</h2>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Marketing -->
+        <a href="/marketing" class="card group block no-underline">
+          <div class="flex items-start justify-between mb-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-brand-gold)]">Marketing & Strategy</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-[var(--color-ink-muted)] group-hover:text-[var(--color-brand-yellow)] group-hover:translate-x-1 transition-all"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </div>
+          <h3 class="text-2xl mb-3 font-display">Brand strategy for companies that want to mean something</h3>
+          <p class="text-[var(--color-ink-muted)] text-sm leading-relaxed">
+            Nearly 20 years of B2B and B2C marketing leadership. From brand strategy and messaging to go-to-market execution. Startups to Fortune 500.
+          </p>
+        </a>
+
+        <!-- Podcasting -->
+        <a href="/podcasting" class="card group block no-underline">
+          <div class="flex items-start justify-between mb-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-brand-gold)]">Podcasting</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-[var(--color-ink-muted)] group-hover:text-[var(--color-brand-yellow)] group-hover:translate-x-1 transition-all"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </div>
+          <h3 class="text-2xl mb-3 font-display">500+ episodes. Millions of downloads. 1,000+ five-star reviews.</h3>
+          <p class="text-[var(--color-ink-muted)] text-sm leading-relaxed">
+            Four podcast projects spanning comedy, entrepreneurship, lost media, and SaaS strategy. Hosted, produced, and loved every minute.
+          </p>
+        </a>
+
+        <!-- Music -->
+        <a href="/music" class="card group block no-underline">
+          <div class="flex items-start justify-between mb-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-brand-gold)]">Music</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-[var(--color-ink-muted)] group-hover:text-[var(--color-brand-yellow)] group-hover:translate-x-1 transition-all"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </div>
+          <h3 class="text-2xl mb-3 font-display">From spoken word stages to studio albums</h3>
+          <p class="text-[var(--color-ink-muted)] text-sm leading-relaxed">
+            50+ songs across 14 projects. Hundreds of thousands of streams. Collaborations with Big Cats, Lydia Liza, K.Raydio. Performed at First Avenue.
+          </p>
+        </a>
+
+        <!-- Writing -->
+        <a href="/writing" class="card group block no-underline">
+          <div class="flex items-start justify-between mb-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-brand-gold)]">Writing</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-[var(--color-ink-muted)] group-hover:text-[var(--color-brand-yellow)] group-hover:translate-x-1 transition-all"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </div>
+          <h3 class="text-2xl mb-3 font-display">Essays, poetry, scripts, and the occasional rant</h3>
+          <p class="text-[var(--color-ink-muted)] text-sm leading-relaxed">
+            Spoken word and slam poetry performer turned writer. From blackout poetry to longform essays on sports, culture, and the creative life.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRESS / SOCIAL PROOF ============ -->
+  <section class="py-16 bg-[var(--color-surface-warm)] border-y border-[var(--color-border)]">
+    <div class="container-wide">
+      <p class="text-center text-sm font-medium uppercase tracking-[0.2em] text-[var(--color-ink-muted)] mb-10">Featured In</p>
+      <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+        <span class="text-lg font-semibold text-[var(--color-ink-muted)]/50 hover:text-[var(--color-ink-muted)] transition-colors font-display">Star Tribune</span>
+        <span class="text-lg font-semibold text-[var(--color-ink-muted)]/50 hover:text-[var(--color-ink-muted)] transition-colors font-display">Fox 21</span>
+        <span class="text-lg font-semibold text-[var(--color-ink-muted)]/50 hover:text-[var(--color-ink-muted)] transition-colors font-display">Northern News Now</span>
+        <span class="text-lg font-semibold text-[var(--color-ink-muted)]/50 hover:text-[var(--color-ink-muted)] transition-colors font-display">WTIP</span>
+        <span class="text-lg font-semibold text-[var(--color-ink-muted)]/50 hover:text-[var(--color-ink-muted)] transition-colors font-display">Apple Podcasts</span>
+        <span class="text-lg font-semibold text-[var(--color-ink-muted)]/50 hover:text-[var(--color-ink-muted)] transition-colors font-display">Spotify</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section-padding">
+    <div class="container-wide">
+      <div class="text-center mb-16">
+        <span class="accent-bar mx-auto mb-6"></span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl">Kind words</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="testimonial-quote">
+          <p class="text-[var(--color-ink-light)] mb-4 leading-relaxed">
+            "Ryan has ruined all future marketing leaders for me. His unique blend of marketing, strategy, and technical know-how, combined with his thoughtfulness and willingness to roll up his sleeves, makes him an inspiring leader who gets the best from his team."
+          </p>
+          <p class="text-sm font-semibold text-[var(--color-ink)]">Brendan Fortune</p>
+          <p class="text-xs text-[var(--color-ink-muted)]">Customer.io</p>
+        </div>
+
+        <div class="testimonial-quote">
+          <p class="text-[var(--color-ink-light)] mb-4 leading-relaxed">
+            "Ryan is absolutely amazing to work with. He was critical to the success of our sales organization and was always ready to jump in and help. Ryan is a true leader in every sense of the word. If you are able to have him on your team, you have gained an unfair advantage."
+          </p>
+          <p class="text-sm font-semibold text-[var(--color-ink)]">Geoff Prince</p>
+          <p class="text-xs text-[var(--color-ink-muted)]">BetterUp</p>
+        </div>
+
+        <div class="testimonial-quote">
+          <p class="text-[var(--color-ink-light)] mb-4 leading-relaxed">
+            "One of the most talented and well-rounded marketers I've ever had the opportunity to work with. Everything he attached his name to, he executed with attention to detail and always delivered very high-quality work."
+          </p>
+          <p class="text-sm font-semibold text-[var(--color-ink)]">Jordan Barker</p>
+          <p class="text-xs text-[var(--color-ink-muted)]">Clicklease</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Newsletter />
+
+</BaseLayout>

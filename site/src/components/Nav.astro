@@ -1,0 +1,186 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  {
+    label: 'About',
+    href: '/about',
+    children: [
+      { label: 'My Story', href: '/about' },
+      { label: 'Press & Media', href: '/press' },
+      { label: 'Speaking & Events', href: '/speaking' },
+    ]
+  },
+  {
+    label: 'Marketing',
+    href: '/marketing',
+    children: [
+      { label: 'Services & Approach', href: '/marketing' },
+      { label: 'Work With Me', href: '/marketing#engagement' },
+      { label: 'Testimonials', href: '/marketing#testimonials' },
+    ]
+  },
+  {
+    label: 'Creative',
+    href: '/podcasting',
+    children: [
+      { label: 'Podcasting', href: '/podcasting' },
+      { label: 'Music', href: '/music' },
+      { label: 'Writing', href: '/writing' },
+    ]
+  },
+  {
+    label: 'Contact',
+    href: '/contact',
+  },
+];
+
+function isActive(item: typeof navItems[0]) {
+  if (currentPath === item.href) return true;
+  if (item.children) {
+    return item.children.some(child => currentPath === child.href || currentPath.startsWith(child.href + '/'));
+  }
+  return false;
+}
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-[var(--color-surface)]/95 backdrop-blur-sm border-b border-[var(--color-border)]" id="site-nav">
+  <div class="container-wide flex items-center justify-between h-16 lg:h-20">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 font-bold text-lg tracking-tight no-underline text-[var(--color-ink)] hover:text-[var(--color-brand-gold)] transition-colors">
+      <span class="w-2.5 h-2.5 bg-[var(--color-brand-yellow)] rounded-full inline-block"></span>
+      <span style="font-family: var(--font-body); font-weight: 700; letter-spacing: -0.03em;">Kopperud & Co.</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden lg:flex items-center gap-8" aria-label="Main navigation">
+      {navItems.map(item => (
+        item.children ? (
+          <div class="relative group">
+            <a
+              href={item.href}
+              class:list={[
+                'text-sm font-medium tracking-wide transition-colors no-underline inline-flex items-center gap-1',
+                isActive(item)
+                  ? 'text-[var(--color-ink)]'
+                  : 'text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]'
+              ]}
+            >
+              {item.label}
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50 group-hover:opacity-100 transition-opacity"><path d="m6 9 6 6 6-6"/></svg>
+            </a>
+            <!-- Dropdown -->
+            <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div class="bg-white border border-[var(--color-border)] shadow-lg min-w-[200px] py-2">
+                {item.children.map(child => (
+                  <a
+                    href={child.href}
+                    class:list={[
+                      'block px-5 py-2.5 text-sm no-underline transition-colors',
+                      currentPath === child.href
+                        ? 'text-[var(--color-ink)] bg-[var(--color-surface-warm)]'
+                        : 'text-[var(--color-ink-muted)] hover:text-[var(--color-ink)] hover:bg-[var(--color-surface-warm)]'
+                    ]}
+                  >
+                    {child.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <a
+            href={item.href}
+            class:list={[
+              'text-sm font-medium tracking-wide transition-colors no-underline',
+              isActive(item)
+                ? 'text-[var(--color-ink)]'
+                : 'text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]'
+            ]}
+          >
+            {item.label}
+          </a>
+        )
+      ))}
+    </nav>
+
+    <!-- Mobile Menu Toggle -->
+    <button
+      class="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5"
+      id="mobile-menu-toggle"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+      <span class="block w-6 h-0.5 bg-[var(--color-ink)] transition-all duration-300" id="bar-1"></span>
+      <span class="block w-6 h-0.5 bg-[var(--color-ink)] transition-all duration-300" id="bar-2"></span>
+      <span class="block w-4 h-0.5 bg-[var(--color-ink)] transition-all duration-300 ml-auto" id="bar-3"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="lg:hidden hidden fixed left-0 right-0 top-16 bottom-0 bg-[var(--color-surface)] z-[100] overflow-y-auto" style="height: calc(100vh - 4rem); height: calc(100dvh - 4rem);" id="mobile-menu">
+    <nav class="container-wide py-8 flex flex-col gap-2" aria-label="Mobile navigation">
+      {navItems.map(item => (
+        <div>
+          <a
+            href={item.href}
+            class:list={[
+              'text-2xl font-medium transition-colors no-underline block py-2 font-display',
+              isActive(item)
+                ? 'text-[var(--color-ink)]'
+                : 'text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]'
+            ]}
+          >
+            {item.label}
+          </a>
+          {item.children && (
+            <div class="pl-4 flex flex-col gap-1 mb-4">
+              {item.children.map(child => (
+                <a
+                  href={child.href}
+                  class:list={[
+                    'text-base transition-colors no-underline block py-1.5',
+                    currentPath === child.href
+                      ? 'text-[var(--color-ink)]'
+                      : 'text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]'
+                  ]}
+                >
+                  {child.label}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<!-- Spacer for fixed nav -->
+<div class="h-16 lg:h-20"></div>
+
+<script>
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const bar1 = document.getElementById('bar-1');
+  const bar2 = document.getElementById('bar-2');
+  const bar3 = document.getElementById('bar-3');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+
+    if (!isOpen) {
+      bar1!.style.transform = 'rotate(45deg) translate(4px, 4px)';
+      bar2!.style.opacity = '0';
+      bar3!.style.transform = 'rotate(-45deg) translate(4px, -4px)';
+      bar3!.style.width = '1.5rem';
+    } else {
+      bar1!.style.transform = '';
+      bar2!.style.opacity = '1';
+      bar3!.style.transform = '';
+      bar3!.style.width = '1rem';
+    }
+  });
+</script>

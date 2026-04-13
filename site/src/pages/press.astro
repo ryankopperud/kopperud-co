@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const coverage = [
+  {
+    publication: 'Star Tribune',
+    title: 'Minnesota\'s hemp-derived THC companies prepare to fight ban on Capitol Hill',
+    date: 'December 2025',
+    href: 'https://www.startribune.com/minnesotas-hemp-derived-thc-companies-prepare-to-fight-ban-on-capitol-hill/601523793'
+  },
+  {
+    publication: 'Fox 21',
+    title: 'Senator Amy Klobuchar speaks on potential hemp ban',
+    date: 'December 2025',
+    href: 'https://fox21online.com/2025/12/30/senator-amy-klobuchar-speaks-on-potential-hemp-ban'
+  },
+  {
+    publication: 'Northern News Now',
+    title: 'Local breweries on the clock as federal ban looms for THC beverages',
+    date: 'December 2025',
+    href: 'https://www.northernnewsnow.com/2025/12/31/local-breweries-clock-federal-ban-looms-thc-beverages-next-year/'
+  },
+  {
+    publication: 'WTIP',
+    title: 'Breweries, liquor stores, and retailers navigate uncertain future of selling hemp products',
+    date: 'December 2025',
+    href: 'https://wtip.org/breweries-liquor-stores-and-retailers-navigate-uncertain-future-of-selling-hemp-products/'
+  },
+];
+---
+
+<BaseLayout title="Press & Media | Ryan Kopperud" description="Press coverage, media appearances, and media kit. Featured in Star Tribune, Fox 21, Northern News Now, WTIP, and more.">
+
+  <!-- Hero -->
+  <section class="section-padding">
+    <div class="container-wide">
+      <div class="max-w-3xl">
+        <span class="accent-bar mb-6"></span>
+        <h1 class="text-5xl sm:text-6xl md:text-7xl mb-8">Press<br />& Media</h1>
+        <p class="text-xl text-[var(--color-ink-light)] leading-relaxed">
+          Media coverage, press features, and resources for journalists and event organizers.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Press Logos -->
+  <section class="py-16 bg-[var(--color-surface-warm)] border-y border-[var(--color-border)]">
+    <div class="container-wide">
+      <p class="text-center text-sm font-medium uppercase tracking-[0.2em] text-[var(--color-ink-muted)] mb-10">Featured In</p>
+      <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+        <span class="text-xl font-semibold text-[var(--color-ink-light)] font-display">Star Tribune</span>
+        <span class="text-xl font-semibold text-[var(--color-ink-light)] font-display">Fox 21</span>
+        <span class="text-xl font-semibold text-[var(--color-ink-light)] font-display">Northern News Now</span>
+        <span class="text-xl font-semibold text-[var(--color-ink-light)] font-display">WTIP</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coverage -->
+  <section class="section-padding">
+    <div class="container-wide">
+      <span class="accent-bar mb-6"></span>
+      <h2 class="text-3xl sm:text-4xl mb-12">Coverage</h2>
+      <div class="space-y-6 max-w-3xl">
+        {coverage.map(article => (
+          <a href={article.href} target="_blank" rel="noopener noreferrer" class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6 pb-6 border-b border-[var(--color-border)] no-underline group">
+            <div class="flex items-center gap-3 sm:min-w-[10rem]">
+              <p class="text-sm font-semibold text-[var(--color-brand-gold)]">{article.publication}</p>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg mb-1 group-hover:text-[var(--color-brand-gold)] transition-colors font-display">{article.title}</h3>
+              <p class="text-xs text-[var(--color-ink-muted)]">{article.date}</p>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-[var(--color-ink-muted)] group-hover:text-[var(--color-brand-yellow)] shrink-0 mt-1 hidden sm:block"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Media Kit -->
+  <section class="section-dark section-padding">
+    <div class="container-wide">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div>
+          <span class="accent-bar mb-6"></span>
+          <h2 class="text-3xl sm:text-4xl mb-6">Media kit</h2>
+          <p class="text-[var(--color-surface)]/60 leading-relaxed mb-8">
+            Everything you need for press features, event promotions, and speaking introductions.
+          </p>
+          <div class="space-y-4">
+            <div class="border border-[var(--color-border-dark)] p-4">
+              <h3 class="text-sm font-semibold text-[var(--color-surface)] mb-1">Short Bio</h3>
+              <p class="text-xs text-[var(--color-surface)]/50 leading-relaxed">
+                Ryan Kopperud is the Founder & President of Kopperud & Co., a marketing consulting firm for technology startups and consumer brands. With nearly 20 years of experience across 20+ brands, he's a creative strategist, podcaster (500+ episodes, millions of downloads), musician, and writer based in Minneapolis. He also serves as VP of Growth at Wild State Cider and sits on the Board of Directors for COMPAS, a Minnesota arts nonprofit.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-ink-muted)] mb-4">Key facts</h3>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center py-2 border-b border-[var(--color-border-dark)]">
+              <span class="text-sm text-[var(--color-surface)]/60">Location</span>
+              <span class="text-sm text-[var(--color-surface)]">Minneapolis, MN</span>
+            </div>
+            <div class="flex justify-between items-center py-2 border-b border-[var(--color-border-dark)]">
+              <span class="text-sm text-[var(--color-surface)]/60">Experience</span>
+              <span class="text-sm text-[var(--color-surface)]">Nearly 20 years</span>
+            </div>
+            <div class="flex justify-between items-center py-2 border-b border-[var(--color-border-dark)]">
+              <span class="text-sm text-[var(--color-surface)]/60">Brands served</span>
+              <span class="text-sm text-[var(--color-surface)]">20+</span>
+            </div>
+            <div class="flex justify-between items-center py-2 border-b border-[var(--color-border-dark)]">
+              <span class="text-sm text-[var(--color-surface)]/60">Podcast episodes</span>
+              <span class="text-sm text-[var(--color-surface)]">500+</span>
+            </div>
+            <div class="flex justify-between items-center py-2 border-b border-[var(--color-border-dark)]">
+              <span class="text-sm text-[var(--color-surface)]/60">Email</span>
+              <span class="text-sm text-[var(--color-surface)]">ryan@kopperud.co</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Press Contact -->
+  <section class="section-padding-sm">
+    <div class="container-narrow text-center">
+      <h2 class="text-3xl sm:text-4xl mb-6">Press inquiries</h2>
+      <p class="text-[var(--color-ink-muted)] mb-8 max-w-lg mx-auto">
+        For interviews, media requests, or press inquiries, get in touch directly.
+      </p>
+      <a href="/contact" class="btn-primary">
+        Contact for press
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

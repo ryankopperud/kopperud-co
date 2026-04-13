@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About Ryan Kopperud | Kopperud & Co." description="The story of a slam poet who became a marketing leader. Nearly 20 years building brands, making music, hosting podcasts, and writing. Based in Minneapolis.">
+
+  <!-- Hero -->
+  <section class="section-padding">
+    <div class="container-wide">
+      <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+        <div class="max-w-2xl flex-1">
+          <span class="accent-bar mb-6"></span>
+          <h1 class="text-5xl sm:text-6xl md:text-7xl mb-8">Hi. I'm Ryan.<br />It's nice to meet you.</h1>
+          <p class="text-xl text-[var(--color-ink-light)] leading-relaxed">
+            I'm the Founder & President of Kopperud & Co., a marketing consulting firm. But that's just one chapter.
+          </p>
+        </div>
+        <div class="w-72 md:w-80 shrink-0">
+          <img src="/images/whatif-about.webp" alt="Ryan Kopperud" loading="eager" fetchpriority="high" class="w-full aspect-square object-cover rounded-sm shadow-2xl" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase Video -->
+  <section class="py-16 bg-[var(--color-surface-warm)] border-y border-[var(--color-border)]">
+    <div class="container-narrow">
+      <video
+        controls
+        preload="metadata"
+        playsinline
+        poster="/images/ryan-bio-square.webp"
+        class="w-full rounded-sm shadow-2xl"
+      >
+        <source src="/videos/showcase-video.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </section>
+
+  <!-- The Story -->
+  <section class="section-dark section-padding">
+    <div class="container-narrow">
+      <span class="accent-bar mb-8"></span>
+      <h2 class="text-3xl sm:text-4xl mb-10">The story</h2>
+
+      <div class="space-y-6 text-lg text-[var(--color-surface)]/75 leading-relaxed">
+        <p>
+          It started with words.
+        </p>
+        <p>
+          I was 19 years old, standing on a stage in Austin, Texas, competing with the Minneapolis Poetry Slam Team at the National Poetry Slam. I'd been writing since I could hold a pen, but spoken word gave me something new — a way to make words <em>move</em> people. Not just on paper, but in real time, in a room full of strangers.
+        </p>
+        <p>
+          That led to hip-hop. By 2006, I was making music — collaborating with artists like Big Cats, Lydia Liza, and K.Raydio, performing at First Avenue, and releasing albums that would eventually reach hundreds of thousands of listeners. I studied English and creative writing at the University of Minnesota, and the Twin Cities spoken word and hip-hop scenes became my classroom.
+        </p>
+        <p>
+          Somewhere along the way, I realized the thing I loved most — <strong class="text-[var(--color-brand-yellow)]">telling stories</strong> — was also the thing that made great marketing. The same instincts that made a poem land or a song connect were the same ones that could make a brand resonate. So I brought that energy into the business world.
+        </p>
+        <p>
+          Over the next decade-plus, I built a career in B2B and B2C marketing — leading teams at the Director and VP level for software companies ranging from true startups to mid-market enterprises with Fortune 500 clients. I've worked with 20+ brands, been through acquisitions, private equity, and venture capital. I've done the strategy, the positioning, the go-to-market, the campaigns, the creative direction — all of it.
+        </p>
+        <p>
+          Today, I run <strong class="text-[var(--color-brand-yellow)]">Kopperud & Co.</strong>, consulting with technology startups and consumer brands on brand strategy, messaging, positioning, and go-to-market. I'm also the VP of Growth at <strong class="text-[var(--color-brand-yellow)]">Wild State Cider</strong> in Duluth, Minnesota, where I lead growth strategy for one of the most innovative cideries in the Midwest — including their THC-infused beverage line.
+        </p>
+        <p>
+          I serve on the Board of Directors for <strong class="text-[var(--color-brand-yellow)]">COMPAS</strong>, a Minnesota arts nonprofit that brings creative experiences to schools and communities — chairing their Marketing & Communications Committee.
+        </p>
+        <div class="my-10">
+          <img src="/images/ryan-portrait.webp" alt="Ryan Kopperud performing live" loading="lazy" class="w-full max-w-lg mx-auto rounded-sm shadow-lg" />
+        </div>
+        <p>
+          And I still make music. Still host podcasts (500+ episodes and counting). Still write. Still perform.
+        </p>
+        <p>
+          Because it all comes back to the same thing it always has: <em>story</em>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Current Roles -->
+  <section class="section-padding">
+    <div class="container-wide">
+      <span class="accent-bar mb-6"></span>
+      <h2 class="text-3xl sm:text-4xl mb-12">What I'm doing now</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-brand-gold)] mb-3">Consulting</p>
+          <h3 class="text-xl mb-3 font-display">Kopperud & Co.</h3>
+          <p class="text-sm text-[var(--color-ink-muted)] leading-relaxed">
+            Founder & President. Marketing consulting for technology startups and consumer brands. Brand strategy, messaging, positioning, go-to-market.
+          </p>
+        </div>
+
+        <div class="card">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-brand-gold)] mb-3">Growth</p>
+          <h3 class="text-xl mb-3 font-display">Wild State Cider</h3>
+          <p class="text-sm text-[var(--color-ink-muted)] leading-relaxed">
+            VP of Growth. Leading growth strategy for a Duluth-based cidery and THC-infused beverage company. Advocacy for hemp industry policy.
+          </p>
+        </div>
+
+        <div class="card">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-brand-gold)] mb-3">Community</p>
+          <h3 class="text-xl mb-3 font-display">COMPAS</h3>
+          <p class="text-sm text-[var(--color-ink-muted)] leading-relaxed">
+            Board of Directors. Chair, Marketing & Communications Committee. A Minnesota arts nonprofit supporting creative experiences in schools and communities.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="py-16 bg-[var(--color-surface-warm)] border-y border-[var(--color-border)]">
+    <div class="container-narrow text-center">
+      <h2 class="text-3xl sm:text-4xl mb-8">What I believe</h2>
+      <div class="space-y-6 text-lg text-[var(--color-ink-light)] leading-relaxed">
+        <p>That creativity and strategy aren't opposites — they're partners.</p>
+        <p>That the best brands are built on authentic stories, not manufactured ones.</p>
+        <p>That everyone has a story worth telling. Most just need help telling it.</p>
+        <p>That the arts matter. That social justice matters. That showing up matters.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-padding-sm">
+    <div class="container-narrow text-center">
+      <h2 class="text-3xl sm:text-4xl mb-6">Let's work together</h2>
+      <p class="text-[var(--color-ink-muted)] mb-8 max-w-lg mx-auto">
+        Whether you need marketing strategy, a podcast collaborator, or just want to say hello — I'd love to hear from you.
+      </p>
+      <a href="/contact" class="btn-primary">
+        Get in touch
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

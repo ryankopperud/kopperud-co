@@ -1,0 +1,113 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Newsletter from '../components/Newsletter.astro';
+
+interface Props {
+  title: string;
+  date: string;
+  category?: string;
+  description: string;
+  type?: 'article' | 'poetry';
+}
+
+const { title, date, category, description, type = 'article' } = Astro.props;
+---
+
+<BaseLayout title={`${title} | Ryan Kopperud`} description={description}>
+  <article class="section-padding">
+    <div class="container-narrow">
+      <header class="mb-12">
+        <a href="/writing" class="text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-brand-gold)] transition-colors no-underline mb-6 inline-block">
+          &larr; Back to Writing
+        </a>
+        {category && (
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-brand-gold)] mb-3">{category}</p>
+        )}
+        <h1 class="text-4xl sm:text-5xl md:text-6xl mb-4">{title}</h1>
+        <p class="text-sm text-[var(--color-ink-muted)]">{date} &middot; Ryan Kopperud</p>
+      </header>
+
+      <div class:list={[
+        'prose-content',
+        type === 'poetry' ? 'poetry-content' : ''
+      ]}>
+        <slot />
+      </div>
+    </div>
+  </article>
+
+  <Newsletter heading="Read more" description="Subscribe for occasional essays, creative updates, and thoughtful writing." />
+</BaseLayout>
+
+<style is:global>
+  .prose-content {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--color-ink-light);
+  }
+
+  .prose-content p {
+    margin-bottom: 1.5rem;
+  }
+
+  .prose-content h2, .prose-content h3, .prose-content h4 {
+    font-family: var(--font-display);
+    color: var(--color-ink);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .prose-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .prose-content h3 {
+    font-size: 1.375rem;
+  }
+
+  .prose-content h4 {
+    font-size: 1.125rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+  }
+
+  .prose-content strong {
+    color: var(--color-ink);
+    font-weight: 600;
+  }
+
+  .prose-content blockquote {
+    border-left: 3px solid var(--color-brand-yellow);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--color-ink);
+  }
+
+  .prose-content ul, .prose-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .prose-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .prose-content ul li {
+    list-style-type: disc;
+  }
+
+  .prose-content ol li {
+    list-style-type: decimal;
+  }
+
+  .poetry-content {
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 2;
+    text-align: center;
+    max-width: 500px;
+    margin-inline: auto;
+  }
+</style>

@@ -1,0 +1,90 @@
+---
+const currentYear = new Date().getFullYear();
+
+const footerLinks = [
+  {
+    title: 'Work',
+    links: [
+      { label: 'Marketing', href: '/marketing' },
+      { label: 'Podcasting', href: '/podcasting' },
+      { label: 'Music', href: '/music' },
+      { label: 'Writing', href: '/writing' },
+    ]
+  },
+  {
+    title: 'More',
+    links: [
+      { label: 'About', href: '/about' },
+      { label: 'Press & Media', href: '/press' },
+      { label: 'Speaking & Events', href: '/speaking' },
+      { label: 'Contact', href: '/contact' },
+    ]
+  }
+];
+
+const socialLinks = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ryankopperud/', icon: 'linkedin' },
+  { label: 'Instagram', href: 'https://www.instagram.com/ryankopperud/', icon: 'instagram' },
+  { label: 'Twitter/X', href: 'https://x.com/ryankopperud', icon: 'twitter' },
+  { label: 'Spotify', href: 'https://open.spotify.com/artist/02WrQ3bFUrPs8GLBRt2ATl', icon: 'spotify' },
+  { label: 'YouTube', href: 'https://www.youtube.com/@ryankopperud', icon: 'youtube' },
+];
+---
+
+<footer class="section-dark border-t border-[var(--color-border-dark)]">
+  <div class="container-wide py-16 lg:py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+      <!-- Brand Column -->
+      <div class="lg:col-span-2">
+        <a href="/" class="flex items-center gap-2 font-bold text-lg tracking-tight no-underline text-[var(--color-surface)] mb-4">
+          <span class="w-2.5 h-2.5 bg-[var(--color-brand-yellow)] rounded-full inline-block"></span>
+          <span style="font-family: var(--font-body); font-weight: 700; letter-spacing: -0.03em;">Kopperud & Co.</span>
+        </a>
+        <p class="text-[var(--color-ink-muted)] max-w-sm mb-6 text-sm leading-relaxed">
+          Everything's a story. Tell a better one.
+        </p>
+        <div class="flex items-center gap-4">
+          {socialLinks.map(social => (
+            <a
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-[var(--color-ink-muted)] hover:text-[var(--color-brand-yellow)] transition-colors text-sm"
+              aria-label={social.label}
+            >
+              {social.label}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Link Columns -->
+      {footerLinks.map(group => (
+        <div>
+          <h3 class="text-sm font-semibold uppercase tracking-widest text-[var(--color-ink-muted)] mb-4" style="font-family: var(--font-body);">
+            {group.title}
+          </h3>
+          <ul class="space-y-3">
+            {group.links.map(link => (
+              <li>
+                <a href={link.href} class="text-sm text-[var(--color-surface)]/70 hover:text-[var(--color-brand-yellow)] transition-colors no-underline">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="mt-16 pt-8 border-t border-[var(--color-border-dark)] flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-[var(--color-ink-muted)]">
+        &copy; {currentYear} Kopperud & Co. All rights reserved.
+      </p>
+      <p class="text-xs text-[var(--color-ink-muted)]">
+        Minneapolis, Minnesota
+      </p>
+    </div>
+  </div>
+</footer>

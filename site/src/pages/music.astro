@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = [
+  {
+    title: 'Before What Came After',
+    type: '6-song EP',
+    description: 'The latest release.',
+    links: [
+      { label: 'Bandcamp', href: 'https://ryankopperud.bandcamp.com' },
+      { label: 'Apple Music', href: 'https://music.apple.com/us/artist/ryan-kopperud/1271498958' },
+      { label: 'Spotify', href: 'https://open.spotify.com/artist/02WrQ3bFUrPs8GLBRt2ATl' },
+    ]
+  },
+  {
+    title: 'Well Wishes',
+    type: 'Single',
+    description: 'Produced by Big Cats, features Lydia Liza. Custom mural video by Impulse Creative.',
+    links: []
+  },
+  {
+    title: 'Twenty Dirt',
+    type: 'Collaborative Album',
+    description: 'A collaborative project with alt-rock band The van Gobots.',
+    links: [
+      { label: 'Bandcamp', href: 'https://ryankopperud.bandcamp.com/album/twenty-dirt' },
+    ]
+  },
+  {
+    title: 'Wish You Weren\'t Here',
+    type: 'Album',
+    description: 'Full-length release exploring themes of memory, distance, and homecoming.',
+    links: [
+      { label: 'Bandcamp', href: 'https://ryankopperud.bandcamp.com/album/wish-you-werent-here' },
+    ]
+  },
+  {
+    title: 'Get Gone',
+    type: 'Single',
+    description: 'Features K.Raydio. Lyric video with VFX by Adam Dunn.',
+    links: []
+  },
+  {
+    title: 'Exhaust',
+    type: 'Single',
+    description: 'Stop-motion animation video by Misfit Sleep.',
+    links: []
+  },
+  {
+    title: 'The Polar Bear Rug',
+    type: 'Album',
+    description: 'Early career release.',
+    links: []
+  },
+  {
+    title: 'Still Ours',
+    type: 'Album',
+    description: 'Collaborative project.',
+    links: []
+  },
+];
+---
+
+<BaseLayout title="Music | Ryan Kopperud" description="Hip-hop artist and spoken word performer from Minneapolis. 50+ songs across 14 projects. Collaborations with Big Cats, Lydia Liza, K.Raydio. Performed at First Avenue.">
+
+  <!-- Hero -->
+  <section class="section-padding">
+    <div class="container-wide">
+      <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+        <div class="max-w-2xl flex-1">
+          <span class="accent-bar mb-6"></span>
+          <h1 class="text-5xl sm:text-6xl md:text-7xl mb-8">Music</h1>
+          <p class="text-xl text-[var(--color-ink-light)] leading-relaxed mb-6">
+            I started making music in 2006 after years on the national spoken word circuit. What began as slam poetry evolved into hip-hop — blending lyrical storytelling with production from some of Minneapolis's best.
+          </p>
+          <p class="text-lg text-[var(--color-ink-muted)] leading-relaxed">
+            50+ songs across 14 projects. Hundreds of thousands of streams and views. Collaborations with Big Cats, Lydia Liza, K.Raydio, and more. Performed at First Avenue and venues across the country.
+          </p>
+        </div>
+        <div class="w-64 md:w-72 shrink-0">
+          <img src="/images/album-cover.webp" alt="Before What Came After — EP cover" loading="eager" fetchpriority="high" class="w-full aspect-square object-cover rounded-sm shadow-2xl" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Listen -->
+  <section class="py-16 bg-[var(--color-surface-warm)] border-y border-[var(--color-border)]">
+    <div class="container-wide">
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://open.spotify.com/artist/02WrQ3bFUrPs8GLBRt2ATl" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          Listen on Spotify
+        </a>
+        <a href="https://ryankopperud.bandcamp.com" target="_blank" rel="noopener noreferrer" class="btn-outline">
+          Bandcamp
+        </a>
+        <a href="https://music.apple.com/us/artist/ryan-kopperud/1271498958" target="_blank" rel="noopener noreferrer" class="btn-outline">
+          Apple Music
+        </a>
+        <a href="https://www.youtube.com/@ryankopperud" target="_blank" rel="noopener noreferrer" class="btn-outline">
+          YouTube
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Discography -->
+  <section class="section-padding">
+    <div class="container-wide">
+      <span class="accent-bar mb-6"></span>
+      <h2 class="text-3xl sm:text-4xl mb-12">Discography</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {projects.map(project => (
+          <div class="card">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-brand-gold)] mb-2">{project.type}</p>
+            <h3 class="text-xl mb-2 font-display">{project.title}</h3>
+            <p class="text-sm text-[var(--color-ink-muted)] leading-relaxed mb-4">{project.description}</p>
+            {project.links.length > 0 && (
+              <div class="flex flex-wrap gap-2">
+                {project.links.map(link => (
+                  <a href={link.href} target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-[var(--color-brand-gold)] hover:text-[var(--color-brand-yellow)] transition-colors no-underline">
+                    {link.label} &rarr;
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Performance -->
+  <section class="section-dark section-padding-sm">
+    <div class="container-narrow text-center">
+      <img src="/images/ryan-portrait.webp" alt="Ryan Kopperud performing live" loading="lazy" class="w-full max-w-md mx-auto aspect-square object-cover rounded-sm shadow-lg mb-10" />
+      <h2 class="text-3xl sm:text-4xl mb-6">Live performance</h2>
+      <p class="text-[var(--color-surface)]/60 mb-4 max-w-lg mx-auto">
+        From the stage at First Avenue to venues across the country. If you're interested in booking a performance or collaboration, let's talk.
+      </p>
+      <a href="/contact" class="btn-primary">
+        Get in touch
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

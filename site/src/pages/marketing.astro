@@ -1,0 +1,215 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  {
+    title: 'Brand Strategy',
+    description: 'Who are you? What is your mission and your story? How do you synthesize it? I help companies answer these questions with clarity and conviction.'
+  },
+  {
+    title: 'Messaging & Positioning',
+    description: 'Once you know exactly who you are and what you do, how do you say it — internally and externally? Crisp, compelling messaging that resonates.'
+  },
+  {
+    title: 'Go-to-Market Strategy',
+    description: 'Once you know what you\'re saying, who are you going to tell your story to, and how and where? Strategic GTM planning that drives real results.'
+  },
+  {
+    title: 'Digital Marketing',
+    description: 'Are your digital properties, social accounts, marketing emails, ads, and PR aligned to your story? I make sure every touchpoint speaks with one voice.'
+  }
+];
+
+const clients = [
+  {
+    type: 'Technology Companies',
+    description: 'B2B and B2C SaaS companies in their pre-seed, seed, Series A, B, C, or beyond.'
+  },
+  {
+    type: 'Consumer Brands',
+    description: 'B2C consumer brand companies in food and beverage, fashion, and publishing.'
+  },
+  {
+    type: 'Non-Profit Organizations',
+    description: 'Pro-bono work for local Twin Cities non-profit organizations in need of marketing support.'
+  }
+];
+
+const process = [
+  { step: '01', title: 'Initial Consultation', description: 'Identifying needs, scope, and opportunities. What\'s working and what\'s not.' },
+  { step: '02', title: 'Research & Analysis', description: 'Market research, stakeholder interviews, investor interviews, and customer interviews.' },
+  { step: '03', title: 'Strategy Development', description: 'Identifying a tailored plan of action and set of deliverables to best benefit your business.' },
+  { step: '04', title: 'Creative & Execution', description: 'Copywriting, campaign planning, creative management, marketing advising, and consulting.' }
+];
+
+const testimonials = [
+  {
+    quote: "Ryan has ruined all future marketing leaders for me. If his unique blend of marketing, strategy, and technical know-how wasn't enough, his thoughtfulness and willingness to roll up his sleeves makes him an inspiring leader who gets the best from his team while having fun at the same time.",
+    name: 'Brendan Fortune',
+    company: 'Customer.io'
+  },
+  {
+    quote: "Ryan is absolutely amazing to work with. He was critical to the success of our sales organization and was always ready to jump in and help at any time. Ryan is a true leader in every sense of the word. If you are able to have him on your team you have gained an unfair advantage.",
+    name: 'Geoff Prince',
+    company: 'BetterUp'
+  },
+  {
+    quote: "Ryan is one of the most talented and well-rounded marketers I've ever had the opportunity to work with. Everything he attached his name to, he executed on with attention to detail and always delivered very high-quality work. I would work with Ryan again in a heartbeat.",
+    name: 'Jordan Barker',
+    company: 'Clicklease'
+  },
+  {
+    quote: "He has a breadth of knowledge in digital marketing, a special skill to lead not direct, and a keen eye for the written word and design. He's creative, synergistic, grounded and constructive. I would recommend him to anyone.",
+    name: 'Allie Freeland',
+    company: 'AGF Communications'
+  },
+  {
+    quote: "Ryan is special and someone any organization would be lucky to have leading their brand, marketing and campaigns. I can't recommend Ryan enough.",
+    name: 'Brandon Lytle',
+    company: 'Field Nation'
+  },
+  {
+    quote: "Ryan is a true talent when it comes to Marketing. He led the highest performing marketing team I have ever worked around. He is a thoughtful, creative, well written, well spoken, humble, hard working individual that leads from the front and always by example.",
+    name: 'Ike Nelson',
+    company: 'Pathify'
+  }
+];
+---
+
+<BaseLayout title="Marketing & Strategy | Kopperud & Co." description="Brand strategy, messaging, positioning, and go-to-market for technology startups and consumer brands. Nearly 20 years of experience across 20+ brands.">
+
+  <!-- Hero -->
+  <section class="section-padding">
+    <div class="container-wide">
+      <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+        <div class="max-w-2xl flex-1">
+          <span class="accent-bar mb-6"></span>
+          <h1 class="text-5xl sm:text-6xl md:text-7xl mb-8">Marketing<br />& Strategy</h1>
+          <p class="text-xl text-[var(--color-ink-light)] leading-relaxed mb-6">
+            I have nearly 20 years of marketing experience, working with 20+ brands across B2B and B2C. I've led marketing and creative teams at the Director and VP level through startups, acquisitions, private equity, and venture capital.
+          </p>
+          <p class="text-lg text-[var(--color-ink-muted)] leading-relaxed">
+            I consult with technology startups and consumer brands on brand strategy, business strategy, messaging and positioning, go-to-market strategy, creative, branding, and more.
+          </p>
+        </div>
+        <div class="w-72 md:w-80 shrink-0">
+          <img src="/images/marketing-photo.webp" alt="Ryan Kopperud" loading="eager" fetchpriority="high" class="w-full aspect-[4/3] object-cover rounded-sm shadow-2xl" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section-dark section-padding">
+    <div class="container-wide">
+      <span class="accent-bar mb-6"></span>
+      <h2 class="text-3xl sm:text-4xl mb-12">This is what I do</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {services.map(service => (
+          <div class="border-l-2 border-[var(--color-brand-yellow)] pl-6">
+            <h3 class="text-xl mb-3 text-[var(--color-surface)] font-display">{service.title}</h3>
+            <p class="text-[var(--color-surface)]/60 text-sm leading-relaxed">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Who I Work With -->
+  <section class="section-padding">
+    <div class="container-wide">
+      <span class="accent-bar mb-6"></span>
+      <h2 class="text-3xl sm:text-4xl mb-12">And this is who I do it for</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {clients.map(client => (
+          <div class="card">
+            <h3 class="text-xl mb-3 font-display">{client.type}</h3>
+            <p class="text-sm text-[var(--color-ink-muted)] leading-relaxed">{client.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="py-16 bg-[var(--color-surface-warm)] border-y border-[var(--color-border)]">
+    <div class="container-wide">
+      <span class="accent-bar mb-6"></span>
+      <h2 class="text-3xl sm:text-4xl mb-12">My process</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {process.map(step => (
+          <div>
+            <p class="stat-number text-3xl mb-3">{step.step}</p>
+            <h3 class="text-lg mb-2 font-display">{step.title}</h3>
+            <p class="text-sm text-[var(--color-ink-muted)] leading-relaxed">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Engagement Models -->
+  <section class="section-padding" id="engagement">
+    <div class="container-wide">
+      <span class="accent-bar mb-6"></span>
+      <h2 class="text-3xl sm:text-4xl mb-12">Ways we can work together</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card">
+          <h3 class="text-xl mb-3 font-display">Hourly</h3>
+          <p class="text-sm text-[var(--color-ink-muted)] leading-relaxed">
+            We agree on a bucket of hours and work through them together. Flexible and straightforward.
+          </p>
+        </div>
+        <div class="card border-[var(--color-brand-yellow)]">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-brand-gold)] mb-2">Preferred</p>
+          <h3 class="text-xl mb-3 font-display">Retainer</h3>
+          <p class="text-sm text-[var(--color-ink-muted)] leading-relaxed">
+            We agree on a scope of priorities and you have access to me, my work, and my services for as long as it's mutually beneficial. Three-month minimum. This is my favorite way to work — I become closer to your team to assist and advise.
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="text-xl mb-3 font-display">Project</h3>
+          <p class="text-sm text-[var(--color-ink-muted)] leading-relaxed">
+            A set of deliverables and a timeline, with a project-total rate. Most common with brand strategy work.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section-dark section-padding" id="testimonials">
+    <div class="container-wide">
+      <div class="text-center mb-16">
+        <span class="accent-bar mx-auto mb-6"></span>
+        <h2 class="text-3xl sm:text-4xl">Nice things people have said</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {testimonials.map(t => (
+          <div class="border-l-2 border-[var(--color-brand-yellow)] pl-6">
+            <p class="text-[var(--color-surface)]/70 text-sm leading-relaxed mb-4 italic">
+              "{t.quote}"
+            </p>
+            <p class="text-sm font-semibold text-[var(--color-surface)]">{t.name}</p>
+            <p class="text-xs text-[var(--color-ink-muted)]">{t.company}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-padding-sm">
+    <div class="container-narrow text-center">
+      <h2 class="text-3xl sm:text-4xl mb-6">Let's tell your story</h2>
+      <p class="text-[var(--color-ink-muted)] mb-8 max-w-lg mx-auto">
+        Have a question? An idea? Want to work together? I'd love to hear from you. My digital door is always open, and I respond within 24 hours.
+      </p>
+      <a href="/contact" class="btn-primary">
+        Get in touch
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

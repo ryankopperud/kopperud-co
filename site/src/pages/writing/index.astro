@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Newsletter from '../../components/Newsletter.astro';
+
+const pieces = [
+  {
+    title: 'The Biggest Ticket in Town',
+    date: 'October 2016',
+    category: 'Essay',
+    description: 'A personal reflection on Kevin Garnett\'s retirement, told through the lens of an eight-year-old Timberwolves fan sitting courtside with his dad.',
+    href: '/writing/the-biggest-ticket-in-town'
+  },
+  {
+    title: 'The 3 Workplace Perks That Matter in a Remote World',
+    date: 'November 2021',
+    category: 'Work & Culture',
+    description: 'What actually matters to employees in the new landscape of remote and hybrid work.',
+    href: '/writing/remote-workplace-perks'
+  },
+  {
+    title: 'Good, Fast, Cheap... Pick Two',
+    date: 'August 2022',
+    category: 'Marketing',
+    description: 'The classic creative constraint and why it still holds true.',
+    href: '/writing/good-fast-cheap-pick-two'
+  },
+  {
+    title: 'A Grudge',
+    date: 'September 2022',
+    category: 'Blackout Poetry',
+    description: 'Work frenzied, dawn \'til dusk. Words revealed by redacting the page around them — the quiet rebellion of a grudge.',
+    href: '/writing/a-grudge'
+  },
+  {
+    title: 'Confront The Ruin',
+    date: 'August 2022',
+    category: 'Blackout Poetry',
+    description: 'Don\'t bore me, sing — confront the ruin, demand an end to nothing. Hidden words unearthed from the everyday.',
+    href: '/writing/confront-the-ruin'
+  },
+  {
+    title: 'No Longer The Ether',
+    date: 'May 2019',
+    category: 'Poetry',
+    description: 'A spoken word piece on presence, connection, and the spaces between us.',
+    href: '/writing/no-longer-the-ether'
+  },
+];
+---
+
+<BaseLayout title="Writing | Ryan Kopperud" description="Spoken word, slam poetry, essays, blackout poetry, and more. A writer by education, a creator by passion.">
+
+  <!-- Hero -->
+  <section class="section-padding">
+    <div class="container-wide">
+      <div class="max-w-3xl">
+        <span class="accent-bar mb-6"></span>
+        <h1 class="text-5xl sm:text-6xl md:text-7xl mb-8">Writing</h1>
+        <p class="text-xl text-[var(--color-ink-light)] leading-relaxed mb-6">
+          I've written and performed spoken word and slam poetry for years. Since then, I've written everything from blogs to think pieces, haikus to ebooks, and film scripts to essays.
+        </p>
+        <p class="text-lg text-[var(--color-ink-muted)] leading-relaxed">
+          A writer by education (BA English, Creative Writing, University of Minnesota). A writer by compulsion. Words have always been the through-line.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Pieces -->
+  <section class="section-dark section-padding">
+    <div class="container-wide">
+      <span class="accent-bar mb-6"></span>
+      <h2 class="text-3xl sm:text-4xl mb-12">Selected pieces</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {pieces.map(piece => (
+          <a href={piece.href} class="block p-6 border border-[var(--color-border-dark)] hover:border-[var(--color-brand-yellow)] transition-all no-underline group" target={piece.href.startsWith('http') ? '_blank' : undefined} rel={piece.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-brand-gold)] mb-2">{piece.category}</p>
+            <h3 class="font-display text-lg mb-2 text-[var(--color-surface)] group-hover:text-[var(--color-brand-yellow)] transition-colors">{piece.title}</h3>
+            <p class="text-sm text-[var(--color-surface)]/50 leading-relaxed mb-3">{piece.description}</p>
+            <p class="text-xs text-[var(--color-ink-muted)]">{piece.date}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Spoken Word Background -->
+  <section class="section-padding">
+    <div class="container-narrow">
+      <img src="/images/writing-header.webp" alt="Ryan Kopperud writing backstage" loading="lazy" class="w-full max-w-sm mx-auto aspect-square object-cover rounded-sm shadow-lg mb-12" />
+      <span class="accent-bar mb-6"></span>
+      <h2 class="text-3xl sm:text-4xl mb-8">Spoken word roots</h2>
+      <div class="space-y-6 text-lg text-[var(--color-ink-light)] leading-relaxed">
+        <p>
+          Before I was a marketer, before I made music, I was a poet. I competed with the Minneapolis Poetry Slam Team at 19, traveling to the National Poetry Slam in Austin, Texas.
+        </p>
+        <p>
+          Spoken word taught me the most important lesson of my career: <em>words aren't just information — they're energy</em>. The right words, in the right order, with the right delivery, can change how people feel. That's true on a stage. It's true in a song. And it's true on a landing page.
+        </p>
+        <p>
+          Everything I do — marketing, podcasting, music, writing — starts from that stage.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Newsletter heading="Read more" description="Subscribe for occasional essays, creative updates, and thoughtful writing delivered to your inbox." />
+
+</BaseLayout>

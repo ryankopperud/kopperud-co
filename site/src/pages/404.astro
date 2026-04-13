@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page Not Found | Kopperud & Co." description="The page you're looking for doesn't exist.">
+  <section class="section-padding">
+    <div class="container-narrow text-center">
+      <span class="accent-bar mx-auto mb-6"></span>
+      <h1 class="text-6xl sm:text-7xl md:text-8xl mb-6">404</h1>
+      <p class="text-xl text-[var(--color-ink-light)] mb-10">
+        This page doesn't exist — but there's plenty more to explore.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/" class="btn-primary">
+          Back to home
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="/contact" class="btn-outline">Get in touch</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
