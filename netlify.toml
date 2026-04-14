@@ -9,6 +9,16 @@
   status = 301
 
 [[redirects]]
+  from = "/links"
+  to = "/me"
+  status = 301
+
+[[redirects]]
+  from = "/bio"
+  to = "/me"
+  status = 301
+
+[[redirects]]
   from = "/podcasting/*"
   to = "/podcasting"
   status = 301
