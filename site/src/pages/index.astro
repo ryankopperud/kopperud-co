@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Newsletter from '../components/Newsletter.astro';
 import { press } from '../data/press';
+
+const bannerPress = press.filter(p => p.inBanner !== false);
 ---
 
 <BaseLayout title="Ryan Kopperud | Kopperud & Co." description="Marketer. Podcaster. Musician. Writer. Nearly 20 years of creative strategy across 20+ brands. Everything's a story. Tell a better one.">
@@ -159,7 +161,7 @@ import { press } from '../data/press';
     <div class="container-wide">
       <p class="text-center text-sm font-medium uppercase tracking-[0.2em] text-[var(--color-ink-muted)] mb-10">Featured In</p>
       <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-8 max-w-5xl mx-auto">
-        {press.map(item => (
+        {bannerPress.map(item => (
           <a
             href={item.href}
             target="_blank"

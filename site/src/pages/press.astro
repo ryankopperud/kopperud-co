@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { press } from '../data/press';
 
 const coverage = press;
+const bannerPress = press.filter(p => p.inBanner !== false);
 ---
 
 <BaseLayout title="Press & Media | Ryan Kopperud" description="Press coverage, media appearances, and media kit. Featured in Star Tribune, MinnPost, Twin Cities Business, Duluth News Tribune, WDIO, PRX, and Brewer Magazine.">
@@ -25,7 +26,7 @@ const coverage = press;
     <div class="container-wide">
       <p class="text-center text-sm font-medium uppercase tracking-[0.2em] text-[var(--color-ink-muted)] mb-10">Featured In</p>
       <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-8 max-w-5xl mx-auto">
-        {press.map(item => (
+        {bannerPress.map(item => (
           <a
             href={item.href}
             target="_blank"
@@ -51,10 +52,10 @@ const coverage = press;
     <div class="container-wide">
       <span class="accent-bar mb-6"></span>
       <h2 class="text-3xl sm:text-4xl mb-12">Coverage</h2>
-      <div class="space-y-6 max-w-3xl">
+      <div class="space-y-6 max-w-4xl mx-auto">
         {coverage.map(article => (
-          <a href={article.href} target="_blank" rel="noopener noreferrer" class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6 pb-6 border-b border-[var(--color-border)] no-underline group">
-            <div class="flex items-center gap-3 sm:min-w-[10rem]">
+          <a href={article.href} target="_blank" rel="noopener noreferrer" class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 pb-6 border-b border-[var(--color-border)] no-underline group">
+            <div class="sm:w-52 sm:shrink-0">
               <p class="text-sm font-semibold text-[var(--color-brand-gold)]">{article.publication}</p>
             </div>
             <div class="flex-1">
