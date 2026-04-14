@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Newsletter from '../components/Newsletter.astro';
+import { press } from '../data/press';
 ---
 
 <BaseLayout title="Ryan Kopperud | Kopperud & Co." description="Marketer. Podcaster. Musician. Writer. Nearly 20 years of creative strategy across 20+ brands. Everything's a story. Tell a better one.">
@@ -154,16 +155,27 @@ import Newsletter from '../components/Newsletter.astro';
   </section>
 
   <!-- ============ PRESS / SOCIAL PROOF ============ -->
-  <section class="py-16 bg-[var(--color-surface-warm)] border-y border-[var(--color-border)]">
+  <section class="py-12 bg-[var(--color-surface-warm)] border-y border-[var(--color-border)]">
     <div class="container-wide">
       <p class="text-center text-sm font-medium uppercase tracking-[0.2em] text-[var(--color-ink-muted)] mb-10">Featured In</p>
-      <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
-        <span class="text-lg font-semibold text-[var(--color-ink-muted)]/50 hover:text-[var(--color-ink-muted)] transition-colors font-display">Star Tribune</span>
-        <span class="text-lg font-semibold text-[var(--color-ink-muted)]/50 hover:text-[var(--color-ink-muted)] transition-colors font-display">Fox 21</span>
-        <span class="text-lg font-semibold text-[var(--color-ink-muted)]/50 hover:text-[var(--color-ink-muted)] transition-colors font-display">Northern News Now</span>
-        <span class="text-lg font-semibold text-[var(--color-ink-muted)]/50 hover:text-[var(--color-ink-muted)] transition-colors font-display">WTIP</span>
-        <span class="text-lg font-semibold text-[var(--color-ink-muted)]/50 hover:text-[var(--color-ink-muted)] transition-colors font-display">Apple Podcasts</span>
-        <span class="text-lg font-semibold text-[var(--color-ink-muted)]/50 hover:text-[var(--color-ink-muted)] transition-colors font-display">Spotify</span>
+      <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-8 max-w-5xl mx-auto">
+        {press.map(item => (
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${item.publication}: ${item.title}`}
+            class="block opacity-55 hover:opacity-100 transition-opacity duration-200"
+          >
+            <img
+              src={item.logo}
+              alt={item.publication}
+              class="h-7 md:h-8 w-auto max-w-none object-contain"
+              style={`filter: ${item.logoFilter ?? 'brightness(0)'};`}
+              loading="lazy"
+            />
+          </a>
+        ))}
       </div>
     </div>
   </section>

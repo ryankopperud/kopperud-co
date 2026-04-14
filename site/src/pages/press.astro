@@ -1,35 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { press } from '../data/press';
 
-const coverage = [
-  {
-    publication: 'Star Tribune',
-    title: 'Minnesota\'s hemp-derived THC companies prepare to fight ban on Capitol Hill',
-    date: 'December 2025',
-    href: 'https://www.startribune.com/minnesotas-hemp-derived-thc-companies-prepare-to-fight-ban-on-capitol-hill/601523793'
-  },
-  {
-    publication: 'Fox 21',
-    title: 'Senator Amy Klobuchar speaks on potential hemp ban',
-    date: 'December 2025',
-    href: 'https://fox21online.com/2025/12/30/senator-amy-klobuchar-speaks-on-potential-hemp-ban'
-  },
-  {
-    publication: 'Northern News Now',
-    title: 'Local breweries on the clock as federal ban looms for THC beverages',
-    date: 'December 2025',
-    href: 'https://www.northernnewsnow.com/2025/12/31/local-breweries-clock-federal-ban-looms-thc-beverages-next-year/'
-  },
-  {
-    publication: 'WTIP',
-    title: 'Breweries, liquor stores, and retailers navigate uncertain future of selling hemp products',
-    date: 'December 2025',
-    href: 'https://wtip.org/breweries-liquor-stores-and-retailers-navigate-uncertain-future-of-selling-hemp-products/'
-  },
-];
+const coverage = press;
 ---
 
-<BaseLayout title="Press & Media | Ryan Kopperud" description="Press coverage, media appearances, and media kit. Featured in Star Tribune, Fox 21, Northern News Now, WTIP, and more.">
+<BaseLayout title="Press & Media | Ryan Kopperud" description="Press coverage, media appearances, and media kit. Featured in Star Tribune, MinnPost, Twin Cities Business, Duluth News Tribune, WDIO, PRX, and Brewer Magazine.">
 
   <!-- Hero -->
   <section class="section-padding">
@@ -45,14 +21,27 @@ const coverage = [
   </section>
 
   <!-- Press Logos -->
-  <section class="py-16 bg-[var(--color-surface-warm)] border-y border-[var(--color-border)]">
+  <section class="py-12 bg-[var(--color-surface-warm)] border-y border-[var(--color-border)]">
     <div class="container-wide">
       <p class="text-center text-sm font-medium uppercase tracking-[0.2em] text-[var(--color-ink-muted)] mb-10">Featured In</p>
-      <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
-        <span class="text-xl font-semibold text-[var(--color-ink-light)] font-display">Star Tribune</span>
-        <span class="text-xl font-semibold text-[var(--color-ink-light)] font-display">Fox 21</span>
-        <span class="text-xl font-semibold text-[var(--color-ink-light)] font-display">Northern News Now</span>
-        <span class="text-xl font-semibold text-[var(--color-ink-light)] font-display">WTIP</span>
+      <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-8 max-w-5xl mx-auto">
+        {press.map(item => (
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${item.publication}: ${item.title}`}
+            class="block opacity-55 hover:opacity-100 transition-opacity duration-200"
+          >
+            <img
+              src={item.logo}
+              alt={item.publication}
+              class="h-8 md:h-9 w-auto max-w-none object-contain"
+              style={`filter: ${item.logoFilter ?? 'brightness(0)'};`}
+              loading="lazy"
+            />
+          </a>
+        ))}
       </div>
     </div>
   </section>
